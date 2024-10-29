@@ -1,3 +1,8 @@
+--Check data type
+SELECT column_name, data_type
+FROM information_schema.columns
+WHERE table_name = 'walmart_sales';
+
 --Change data type 
 ALTER TABLE dbo.Walmart_Sales
 ALTER COLUMN Store INT;
