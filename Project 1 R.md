@@ -28,6 +28,7 @@ plot1 <- ggcorrplot(cor_matrix,
            outline.color = "black",
            ggtheme = theme_minimal())
 
-print(Correlation_Matrix_Heatmap.png)
 ```
+![alt text](Correlation_Matrix_Heatmap-1.png)
+
 
