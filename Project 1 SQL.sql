@@ -28,6 +28,19 @@ ALTER COLUMN CPI NUMERIC;
 ALTER TABLE dbo.Walmart_Sales
 ALTER COLUMN Unemployment NUMERIC;
 
+--Check for NULL values
+SELECT *
+FROM walmart_sales
+WHERE 
+    Store IS NULL OR
+    Date IS NULL OR
+    Weekly_Sales IS NULL OR
+    Holiday_Flag IS NULL OR
+    Temperature IS NULL OR
+    Fuel_Price IS NULL OR
+    CPI IS NULL OR
+    Unemployment IS NULL;
+
 --Check for duplicate rows
 SELECT Store, Date, Weekly_Sales, Holiday_Flag, Temperature, Fuel_Price, CPI, Unemployment
 FROM dbo.walmart_sales
@@ -44,15 +57,18 @@ ORDER BY year, week;
 
 
 SELECT 
+    YEAR(Date) AS year,
+    DATEPART(WEEK, Date) AS week,
     Holiday_Flag,
-    AVG(Weekly_Sales) AS avg_weekly_sales,
-    COUNT(*) AS num_weeks
+    SUM(Weekly_Sales) AS total_sales
 FROM 
-    walmart_sales
+    dbo.Walmart_Sales
 GROUP BY 
+    YEAR(Date), 
+    DATEPART(WEEK, Date), 
     Holiday_Flag
 ORDER BY 
-    Holiday_Flag;
+    year, week, Holiday_Flag;
 
 
   
