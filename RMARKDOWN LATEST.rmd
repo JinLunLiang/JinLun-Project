@@ -36,7 +36,6 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 
 ```{r project 1}
 # Load necessary libraries
-install.packages(c("ggplot2", "reshape2", "ggcorrplot"))
 library(ggplot2)
 library(reshape2)
 library(ggcorrplot)
