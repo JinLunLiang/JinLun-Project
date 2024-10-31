@@ -59,4 +59,8 @@ plot1 <- ggcorrplot(cor_matrix,
 
 ```
 
-![ALT](images/Correlation Matrix Heatmap.png)
+![Correlation Matrix Heatmap](images/Correlation_Matrix_Heatmap.png)
+
+
+## Including Plots
+
