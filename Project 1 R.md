@@ -2,13 +2,11 @@
 title: "Project 1 Visualization"
 output: github_document
 ---
-```{r}
 # Load necessary libraries
 install.packages(c("ggplot2", "reshape2", "ggcorrplot"))
 library(ggplot2)
 library(reshape2)
 library(ggcorrplot)
-library(knitr)
 
 # Load the dataset
 walmart_sales <- read.csv("Walmart_Sales.csv")
@@ -20,7 +18,7 @@ data_numeric <- walmart_sales[, c("Weekly_Sales", "Temperature", "Fuel_Price", "
 cor_matrix <- cor(data_numeric, use = "complete.obs")  # Use "complete.obs" to handle missing values
 
 # Plot the full correlation heatmap
-plot1 <- ggcorrplot(cor_matrix, 
+heatmap_plot <- ggcorrplot(cor_matrix, 
                            method = "square", 
                            type = "full",       # Change to "full" to display the entire matrix
                            lab = TRUE, 
@@ -29,6 +27,9 @@ plot1 <- ggcorrplot(cor_matrix,
                            colors = c("blue", "white", "red"),
                            outline.color = "black",
                            ggtheme = theme_minimal())
+
+# Save the plot as a PNG file
+ggsave("Correlation_Matrix_Heatmap.png", plot = heatmap_plot, width = 8, height = 6, units = "in", dpi = 300)
 
 
 

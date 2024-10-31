@@ -623,6 +623,51 @@ GitHub is generated.</p>
 <p>Note that the <code>echo = FALSE</code> parameter was added to the
 code chunk to prevent printing of the R code that generated the
 plot.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">&quot;ggplot2&quot;</span>, <span class="st">&quot;reshape2&quot;</span>, <span class="st">&quot;ggcorrplot&quot;</span>))</span></code></pre></div>
+<pre><code>## Installing packages into &#39;C:/Users/jinlu/AppData/Local/R/win-library/4.4&#39;
+## (as &#39;lib&#39; is unspecified)
+
+## package &#39;ggplot2&#39; successfully unpacked and MD5 sums checked
+## package &#39;reshape2&#39; successfully unpacked and MD5 sums checked
+
+## Warning: cannot remove prior installation of package &#39;reshape2&#39;
+
+## Warning in file.copy(savedcopy, lib, recursive = TRUE): problem copying
+## C:\Users\jinlu\AppData\Local\R\win-library\4.4\00LOCK\reshape2\libs\x64\reshape2.dll
+## to
+## C:\Users\jinlu\AppData\Local\R\win-library\4.4\reshape2\libs\x64\reshape2.dll:
+## Permission denied
+
+## Warning: restored &#39;reshape2&#39;
+
+## package &#39;ggcorrplot&#39; successfully unpacked and MD5 sums checked
+## 
+## The downloaded binary packages are in
+##  C:\Users\jinlu\AppData\Local\Temp\RtmpIj8hsc\downloaded_packages</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="fu">library</span>(reshape2)</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="fu">library</span>(ggcorrplot)</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>walmart_sales <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;Walmart_Sales.csv&quot;</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="co"># Select only the numeric columns needed for correlation</span></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>data_numeric <span class="ot">&lt;-</span> walmart_sales[, <span class="fu">c</span>(<span class="st">&quot;Weekly_Sales&quot;</span>, <span class="st">&quot;Temperature&quot;</span>, <span class="st">&quot;Fuel_Price&quot;</span>, <span class="st">&quot;CPI&quot;</span>, <span class="st">&quot;Unemployment&quot;</span>)]</span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="co"># Calculate the correlation matrix</span></span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>cor_matrix <span class="ot">&lt;-</span> <span class="fu">cor</span>(data_numeric, <span class="at">use =</span> <span class="st">&quot;complete.obs&quot;</span>)  <span class="co"># Use &quot;complete.obs&quot; to handle missing values</span></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a><span class="co"># Plot the full correlation heatmap</span></span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a>plot <span class="ot">&lt;-</span> <span class="fu">ggcorrplot</span>(cor_matrix, </span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a>            <span class="at">method =</span> <span class="st">&quot;square&quot;</span>, </span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a>            <span class="at">type =</span> <span class="st">&quot;full&quot;</span>,       <span class="co"># Change to &quot;full&quot; to display the entire matrix</span></span>
+<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a>            <span class="at">lab =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a>            <span class="at">lab_size =</span> <span class="dv">3</span>, </span>
+<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a>            <span class="at">title =</span> <span class="st">&quot;Correlation Matrix Heatmap&quot;</span>,</span>
+<span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a>            <span class="at">colors =</span> <span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;white&quot;</span>, <span class="st">&quot;red&quot;</span>),</span>
+<span id="cb5-22"><a href="#cb5-22" tabindex="-1"></a>            <span class="at">outline.color =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb5-23"><a href="#cb5-23" tabindex="-1"></a>            <span class="at">ggtheme =</span> <span class="fu">theme_minimal</span>())</span></code></pre></div>
 
 </body>
 </html>

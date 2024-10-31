@@ -31,3 +31,55 @@ You can also embed plots, for example:
 
 Note that the `echo = FALSE` parameter was added to the code chunk to
 prevent printing of the R code that generated the plot.
+
+``` r
+# Load necessary libraries
+install.packages(c("ggplot2", "reshape2", "ggcorrplot"))
+```
+
+    ## Installing packages into 'C:/Users/jinlu/AppData/Local/R/win-library/4.4'
+    ## (as 'lib' is unspecified)
+
+    ## package 'ggplot2' successfully unpacked and MD5 sums checked
+    ## package 'reshape2' successfully unpacked and MD5 sums checked
+
+    ## Warning: cannot remove prior installation of package 'reshape2'
+
+    ## Warning in file.copy(savedcopy, lib, recursive = TRUE): problem copying
+    ## C:\Users\jinlu\AppData\Local\R\win-library\4.4\00LOCK\reshape2\libs\x64\reshape2.dll
+    ## to
+    ## C:\Users\jinlu\AppData\Local\R\win-library\4.4\reshape2\libs\x64\reshape2.dll:
+    ## Permission denied
+
+    ## Warning: restored 'reshape2'
+
+    ## package 'ggcorrplot' successfully unpacked and MD5 sums checked
+    ## 
+    ## The downloaded binary packages are in
+    ##  C:\Users\jinlu\AppData\Local\Temp\RtmpIj8hsc\downloaded_packages
+
+``` r
+library(ggplot2)
+library(reshape2)
+library(ggcorrplot)
+
+# Load the dataset
+walmart_sales <- read.csv("Walmart_Sales.csv")
+
+# Select only the numeric columns needed for correlation
+data_numeric <- walmart_sales[, c("Weekly_Sales", "Temperature", "Fuel_Price", "CPI", "Unemployment")]
+
+# Calculate the correlation matrix
+cor_matrix <- cor(data_numeric, use = "complete.obs")  # Use "complete.obs" to handle missing values
+
+# Plot the full correlation heatmap
+plot <- ggcorrplot(cor_matrix, 
+            method = "square", 
+            type = "full",       # Change to "full" to display the entire matrix
+            lab = TRUE, 
+            lab_size = 3, 
+            title = "Correlation Matrix Heatmap",
+            colors = c("blue", "white", "red"),
+            outline.color = "black",
+            ggtheme = theme_minimal())
+```
