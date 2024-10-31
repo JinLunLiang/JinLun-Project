@@ -61,7 +61,7 @@ ggcorrplot(cor_matrix,
             ggtheme = theme_minimal())
 ```
 
-Conclusion:
+## **Conclusion**:
 1)Weekly Sales
 -There is a weak negative correlation between Weekly_Sales and Unemployment (-0.11), CPI (-0.07) and Temperature (-0.06). These negative values suggest that as unemployment, CPI or temperature increases, weekly sales may slightly decrease, though the correlation is very weak.
 -Weekly Sales show a very weak, almost negligible, positive correlation with Fuel Price(0.01)
@@ -72,4 +72,4 @@ Conclusion:
 4)CPI
 -Moderate negative correlation with Unemployment (-0.3), which shows a slight tendency for unemployment to rise as CPI decreases, though this is still a weak relationship.
 5)Unemployment
--Moderate negative correlation with CPI (-0.3), indicating that when unemployment is high, CPI tends to be lower, which could reflect general economic trends.
+-Moderate negative correlation with CPI (-0.3), indicating that when unemployment is high, CPI tends to be lower, which could reflect general economic trends.**
