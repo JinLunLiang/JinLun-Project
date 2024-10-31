@@ -29,7 +29,9 @@ ggcorrplot(cor_matrix,
                            outline.color = "black",
                            ggtheme = theme_minimal())
 
-![alt text](image.png)
+![Correlaton Matrix Heatmap](https://github.com/JinLunLiang/JinLun-Project/raw/main/Correlation%20Matrix%20Heatmap.png)
+
+
 ```
 
 
