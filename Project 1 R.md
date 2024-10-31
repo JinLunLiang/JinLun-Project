@@ -19,7 +19,7 @@ data_numeric <- walmart_sales[, c("Weekly_Sales", "Temperature", "Fuel_Price", "
 cor_matrix <- cor(data_numeric, use = "complete.obs")  # Use "complete.obs" to handle missing values
 
 # Plot the full correlation heatmap
-ggcorrplot(cor_matrix, 
+plot1 <- ggcorrplot(cor_matrix, 
                            method = "square", 
                            type = "full",       # Change to "full" to display the entire matrix
                            lab = TRUE, 
@@ -29,10 +29,6 @@ ggcorrplot(cor_matrix,
                            outline.color = "black",
                            ggtheme = theme_minimal())
 
-![Correlaton Matrix Heatmap](https://github.com/JinLunLiang/JinLun-Project/raw/main/Correlation%20Matrix%20Heatmap.png)
-
-
+print(plot1)
 ```
-
-
 
