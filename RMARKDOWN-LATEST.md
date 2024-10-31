@@ -56,7 +56,7 @@ install.packages(c("ggplot2", "reshape2", "ggcorrplot"))
     ## package 'ggcorrplot' successfully unpacked and MD5 sums checked
     ## 
     ## The downloaded binary packages are in
-    ##  C:\Users\jinlu\AppData\Local\Temp\Rtmp4wgP30\downloaded_packages
+    ##  C:\Users\jinlu\AppData\Local\Temp\RtmpmwrCJ7\downloaded_packages
 
 ``` r
 library(ggplot2)
@@ -85,4 +85,3 @@ ggcorrplot(cor_matrix,
 ```
 
 ![](RMARKDOWN-LATEST_files/figure-gfm/project%201-1.png)<!-- -->
-![](RMARKDOWN-LATEST_files/figure-gfm/pressure-1.png)<!-- -->

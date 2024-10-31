@@ -60,6 +60,4 @@ ggcorrplot(cor_matrix,
             colors = c("blue", "white", "red"),
             outline.color = "black",
             ggtheme = theme_minimal())
-
 ```
-![](RMARKDOWN-LATEST_files/figure-gfm/pressure-1.png)<!-- -->
