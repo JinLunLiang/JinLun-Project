@@ -34,7 +34,6 @@ plot(pressure)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
-
 ```{r project 1}
 # Load necessary libraries
 install.packages(c("ggplot2", "reshape2", "ggcorrplot"))
@@ -52,7 +51,7 @@ data_numeric <- walmart_sales[, c("Weekly_Sales", "Temperature", "Fuel_Price", "
 cor_matrix <- cor(data_numeric, use = "complete.obs")  # Use "complete.obs" to handle missing values
 
 # Plot the full correlation heatmap
-plot1 <- ggcorrplot(cor_matrix, 
+ggcorrplot(cor_matrix, 
             method = "square", 
             type = "full",       # Change to "full" to display the entire matrix
             lab = TRUE, 
@@ -63,6 +62,4 @@ plot1 <- ggcorrplot(cor_matrix,
             ggtheme = theme_minimal())
 
 ```
-```{r}
-plot(plot1)
-```
+![](RMARKDOWN-LATEST_files/figure-gfm/pressure-1.png)<!-- -->

@@ -56,7 +56,7 @@ install.packages(c("ggplot2", "reshape2", "ggcorrplot"))
     ## package 'ggcorrplot' successfully unpacked and MD5 sums checked
     ## 
     ## The downloaded binary packages are in
-    ##  C:\Users\jinlu\AppData\Local\Temp\RtmpIj8hsc\downloaded_packages
+    ##  C:\Users\jinlu\AppData\Local\Temp\Rtmp4wgP30\downloaded_packages
 
 ``` r
 library(ggplot2)
@@ -73,7 +73,7 @@ data_numeric <- walmart_sales[, c("Weekly_Sales", "Temperature", "Fuel_Price", "
 cor_matrix <- cor(data_numeric, use = "complete.obs")  # Use "complete.obs" to handle missing values
 
 # Plot the full correlation heatmap
-plot <- ggcorrplot(cor_matrix, 
+ggcorrplot(cor_matrix, 
             method = "square", 
             type = "full",       # Change to "full" to display the entire matrix
             lab = TRUE, 
@@ -83,3 +83,6 @@ plot <- ggcorrplot(cor_matrix,
             outline.color = "black",
             ggtheme = theme_minimal())
 ```
+
+![](RMARKDOWN-LATEST_files/figure-gfm/project%201-1.png)<!-- -->
+![](RMARKDOWN-LATEST_files/figure-gfm/pressure-1.png)<!-- -->
