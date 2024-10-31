@@ -28,10 +28,6 @@ heatmap_plot <- ggcorrplot(cor_matrix,
                            outline.color = "black",
                            ggtheme = theme_minimal())
 
-# Save the plot as a PNG file
-ggsave("Correlation_Matrix_Heatmap.png", plot = heatmap_plot, width = 8, height = 6, units = "in", dpi = 300)
-
-
 
 ```
-![ALT](images/Correlation Matrix Heatmap.png)
+
