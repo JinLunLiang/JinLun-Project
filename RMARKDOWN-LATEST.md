@@ -61,27 +61,39 @@ ggcorrplot(cor_matrix,
 
 ![](RMARKDOWN-LATEST_files/figure-gfm/project%201-1.png)<!-- -->
 
-## Conclusion:
+## Conclusion
 
-1.**Weekly Sales** -There is a weak negative correlation between
-Weekly_Sales and Unemployment (-0.11), CPI (-0.07) and Temperature
-(-0.06). These negative values suggest that as unemployment, CPI or
-temperature increases, weekly sales may slightly decrease, though the
-correlation is very weak. -Weekly Sales show a very weak, almost
-negligible, positive correlation with Fuel Price(0.01)
+1.**Weekly Sales**
 
-2.**Temperature** -Temperature has a weak positive correlation with CPI
-(0.18) and Fuel_Price (0.14), indicating that temperature might slightly
-rise with the consumer price index and fuel price.
+-There is a weak negative correlation between Weekly_Sales and
+Unemployment (-0.11), CPI (-0.07) and Temperature (-0.06). These
+negative values suggest that as unemployment, CPI or temperature
+increases, weekly sales may slightly decrease, though the correlation is
+very weak.
 
-3.**Fuel Price** -Fuel_Price has a weak negative correlation with CPI
-(-0.17), meaning that as fuel prices increase, there may be a slight
-decrease in the CPI, though this relationship is weak.
+-Weekly Sales show a very weak, almost negligible, positive correlation
+with Fuel Price(0.01)
 
-4.**CPI** -Moderate negative correlation with Unemployment (-0.3), which
-shows a slight tendency for unemployment to rise as CPI decreases,
-though this is still a weak relationship.
+2.**Temperature**
 
-5.**Unemployment** -Moderate negative correlation with CPI (-0.3),
-indicating that when unemployment is high, CPI tends to be lower, which
-could reflect general economic trends.\*\*
+-Temperature has a weak positive correlation with CPI (0.18) and
+Fuel_Price (0.14), indicating that temperature might slightly rise with
+the consumer price index and fuel price.
+
+3.**Fuel Price**
+
+-Fuel_Price has a weak negative correlation with CPI (-0.17), meaning
+that as fuel prices increase, there may be a slight decrease in the CPI,
+though this relationship is weak.
+
+4.**CPI**
+
+-Moderate negative correlation with Unemployment (-0.3), which shows a
+slight tendency for unemployment to rise as CPI decreases, though this
+is still a weak relationship.
+
+5.**Unemployment**
+
+-Moderate negative correlation with CPI (-0.3), indicating that when
+unemployment is high, CPI tends to be lower, which could reflect general
+economic trends.\*\*
