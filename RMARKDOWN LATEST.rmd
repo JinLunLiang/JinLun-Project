@@ -62,5 +62,5 @@ ggcorrplot(cor_matrix,
             outline.color = "black",
             ggtheme = theme_minimal())
 
-plot(ggcorrplot)
 ```
+![ALT]("C:\Users\jinlu\OneDrive\Documents\GitHub\JinLun-Project\images\Correlation Matrix Heatmap.png")
