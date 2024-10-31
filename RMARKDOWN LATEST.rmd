@@ -62,4 +62,5 @@ ggcorrplot(cor_matrix,
             outline.color = "black",
             ggtheme = theme_minimal())
 
+plot(ggcorrplot)
 ```
