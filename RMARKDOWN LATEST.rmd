@@ -75,10 +75,7 @@ ggcorrplot(cor_matrix,
 ```{r}
 # Load necessary libraries
 library(ggplot2)
-library(scales)  # For comma formatting
-
-# Load the dataset
-walmart_sales <- read.csv("Walmart_Sales.csv")  # Replace with the correct file path if needed
+library(scales)  
 
 # Create a scatter plot for Temperature and Weekly Sales with full y-axis values
 ggplot(walmart_sales, aes(x = Temperature, y = Weekly_Sales)) +
@@ -103,9 +100,6 @@ library(ggplot2)
 library(dplyr)
 library(scales)  
 
-# Load the dataset
-walmart_sales <- read.csv("Walmart_Sales.csv")
-
 # Calculate average sales for holidays and regular days
 average_sales <- walmart_sales %>%
     group_by(Holiday_Flag) %>%
@@ -120,7 +114,7 @@ ggplot(average_sales, aes(x = Holiday_Flag, y = avg_sales, fill = Holiday_Flag))
     labs(title = "Average Weekly Sales on Holidays vs Regular Days",
          x = "Day Type",
          y = "Average Weekly Sales ($)") +
-    scale_y_continuous(labels = comma) +  # Format y-axis labels
+    scale_y_continuous(labels = comma) + 
     scale_fill_manual(values = c("lightblue", "lightcoral")) +
     theme_minimal()
 
@@ -179,8 +173,6 @@ ggplot(weekly_avg_sales, aes(x = Week, y = avg_weekly_sales)) +
 
 ```{r, message=FALSE, warning=FALSE}
 
-library(ggplot2)
-library(gridExtra)
 # Load necessary libraries
 library(ggplot2)
 library(gridExtra)
@@ -198,8 +190,8 @@ plots <- lapply(columns, function(col) {
         geom_histogram(aes(y = after_stat(density)), bins = num_bins, fill = "skyblue", color = "black", alpha = 0.5) +
         geom_density(color = "darkblue", linewidth = 1) +
         labs(x = col, y = "Density") +
-        scale_x_continuous(labels = comma) +  # Format x-axis with full values and commas
-        scale_y_continuous(labels = comma) +  # Format y-axis with full values and commas
+        scale_x_continuous(labels = comma) +  
+        scale_y_continuous(labels = comma) +  
         theme_minimal()
 })
 
