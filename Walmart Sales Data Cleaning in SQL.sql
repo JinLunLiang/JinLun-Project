@@ -45,9 +45,9 @@ WHERE
 
 --Check for duplicate rows
 SELECT Store, Date, Weekly_Sales, Holiday_Flag, Temperature, Fuel_Price, CPI, Unemployment
-FROM walmart_sales
+FROM dbo.walmart_sales
 GROUP BY Store, Date, Weekly_Sales, Holiday_Flag, Temperature, Fuel_Price, CPI, Unemployment
-HAVING COUNT(*) > 1;
+HAVING COUNT(*) > 1
 
 
 
