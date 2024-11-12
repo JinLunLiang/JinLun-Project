@@ -49,6 +49,77 @@ FROM shopping_trends
 GROUP BY customer_id, age, gender, item_purchased, category, purchase_amount_usd, location, size, color, season, review_rating, subscription_status, payment_method, shipping_type, discount_applied, promo_code_used, previous_purchases, preferred_payment_method, frequency_of_purchases
 HAVING COUNT(*) > 1;
 
+--Demographic Segmentation Analysis (Analyze by age group and gender to identify purchasing patterns)
+SELECT 
+    CASE 
+        WHEN age < 18 THEN '<18'
+        WHEN age BETWEEN 18 AND 25 THEN '18-25'
+        WHEN age BETWEEN 26 AND 35 THEN '26-35'
+        WHEN age BETWEEN 36 AND 50 THEN '36-50'
+        WHEN age BETWEEN 51 AND 65 THEN '51-65'
+        ELSE '65+'
+    END AS age_group,
+    gender,
+    COUNT(customer_id) AS customer_count,
+    AVG(purchase_amount_usd) AS avg_purchase_amount,
+    AVG(previous_purchases) AS avg_previous_purchases
+FROM 
+    shopping_trends
+GROUP BY 
+    CASE 
+        WHEN age < 18 THEN '<18'
+        WHEN age BETWEEN 18 AND 25 THEN '18-25'
+        WHEN age BETWEEN 26 AND 35 THEN '26-35'
+        WHEN age BETWEEN 36 AND 50 THEN '36-50'
+        WHEN age BETWEEN 51 AND 65 THEN '51-65'
+        ELSE '65+'
+    END,
+    gender
+ORDER BY 
+    age_group, gender;
+
+--Geographic Segmentation Analysis (Segment customers by location to understand regional differences in purchasing behavior)
+SELECT 
+    location,
+    COUNT(customer_id) AS total_customers,
+    AVG(purchase_amount_usd) AS avg_purchase_amount,
+    SUM(purchase_amount_usd) AS total_sales,
+    AVG(previous_purchases) AS avg_previous_purchases
+FROM 
+    shopping_trends
+GROUP BY 
+    location
+ORDER BY 
+    avg_purchase_amount DESC;
+
+--Behavioral Segmentation Analysis (Analyze customer behavior based on frequency of purchases and spending habits)
+SELECT 
+    frequency_of_purchases,
+    COUNT(customer_id) AS customer_count,
+    AVG(purchase_amount_usd) AS avg_purchase_amount,
+    SUM(purchase_amount_usd) AS total_spending,
+    AVG(previous_purchases) AS avg_previous_purchases
+FROM 
+    shopping_trends
+GROUP BY 
+    frequency_of_purchases
+ORDER BY 
+    avg_purchase_amount DESC;
+
+--Psychographic Segmentation Analysis (Analyze customer preferences based on product characteristics like category, season, and color)
+SELECT 
+    category,
+    season,
+    color,
+    AVG(purchase_amount_usd) AS avg_purchase_amount,
+    COUNT(customer_id) AS purchase_count,
+    AVG(review_rating) AS avg_review_rating
+FROM 
+    shopping_trends
+GROUP BY 
+    category, season, color
+ORDER BY 
+    avg_purchase_amount DESC;
 
 -- Top 3 Products per Category by Sales
 WITH category_sales AS (
@@ -74,28 +145,25 @@ WHERE
 ORDER BY 
     category, total_sales DESC;
 
--- Seasonal Purchase Trends by Category and Gender
-SELECT 
-    category,
-    gender,
-    SUM(CASE WHEN season = 'Winter' THEN purchase_amount_usd ELSE 0 END) AS Winter_Sales,
-    SUM(CASE WHEN season = 'Spring' THEN purchase_amount_usd ELSE 0 END) AS Spring_Sales,
-    SUM(CASE WHEN season = 'Summer' THEN purchase_amount_usd ELSE 0 END) AS Summer_Sales,
-    SUM(CASE WHEN season = 'Fall' THEN purchase_amount_usd ELSE 0 END) AS Fall_Sales
-FROM 
-    shopping_trends
-GROUP BY 
-    category, gender
-ORDER BY 
-    category, gender;
-
 -- Retention and Churn Rate by Subscription Status
 SELECT 
     subscription_status,
     COUNT(customer_id) AS Total_Customers,
-    COUNT(CASE WHEN frequency_of_purchases IN ('Weekly', 'Fortnightly') THEN customer_id END) * 1.0 / COUNT(customer_id) AS Retention_Rate,
-    COUNT(CASE WHEN frequency_of_purchases = 'Annually' THEN customer_iD END) * 1.0 / COUNT(customer_id) AS Churn_Rate
+    COUNT(CASE WHEN frequency_of_purchases IN ('Bi-Weekly', 'Weekly', 'Fortnightly') THEN customer_id END) * 1.0 / COUNT(customer_id) AS Retention_Rate,
+    COUNT(CASE WHEN frequency_of_purchases IN ('Monthly', 'Annually', 'Quarterly', 'Every 3 Months') THEN customer_id END) * 1.0 / COUNT(customer_id) AS Churn_Rate
 FROM 
     shopping_trends
 GROUP BY 
     subscription_status;
+
+-- Average Order Value and Purchase Frequency by Payment Method
+SELECT 
+    payment_method,
+    COUNT(customer_id) AS purchase_frequency,
+    AVG(purchase_amount_usd) AS Avg_Order_Value
+FROM 
+    shopping_trends
+GROUP BY 
+    payment_method
+ORDER BY 
+    Avg_Order_Value DESC;
