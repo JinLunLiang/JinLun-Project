@@ -31,6 +31,7 @@ relationships. The insights gathered will help reveal factors that could
 influence Walmart’s sales, providing a basis for strategic business
 decisions.
 
+## Analysis 1
 ``` r
 # Load necessary libraries
 library(ggplot2)
@@ -58,7 +59,7 @@ ggcorrplot(cor_matrix,
             ggtheme = theme_minimal())
 ```
 
-![](RMARKDOWN-LATEST_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
+![](RMARKDOWN-LATEST_files/figure-gfm/plot1.png)<!-- -->
 
 ## Conclusion
 
@@ -97,6 +98,7 @@ ggcorrplot(cor_matrix,
   unemployment is high, CPI tends to be lower, which could reflect
   general economic trends.
 
+## Analysis 2
 ``` r
 # Load necessary libraries
 library(ggplot2)
@@ -112,7 +114,7 @@ ggplot(walmart_sales, aes(x = Temperature, y = Weekly_Sales)) +
     theme_minimal()
 ```
 
-![](RMARKDOWN-LATEST_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+![](RMARKDOWN-LATEST_files/figure-gfm/plot2.png)<!-- -->
 
 ## Conclusion
 
@@ -124,6 +126,7 @@ ggplot(walmart_sales, aes(x = Temperature, y = Weekly_Sales)) +
     ranges, which shows temperature has minimal impact on weekly sales
     in this dataset.
 
+## Analysis 3
 ``` r
 # Load necessary libraries
 library(ggplot2)
@@ -149,7 +152,7 @@ ggplot(average_sales, aes(x = Holiday_Flag, y = avg_sales, fill = Holiday_Flag))
     theme_minimal()
 ```
 
-![](RMARKDOWN-LATEST_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](RMARKDOWN-LATEST_files/figure-gfm/plot3.png)<!-- -->
 
 ## Conclusion
 
@@ -166,6 +169,7 @@ ggplot(average_sales, aes(x = Holiday_Flag, y = avg_sales, fill = Holiday_Flag))
   as these periods lack the holiday-specific incentives that drive
   consumers to make larger purchases.
 
+## Analysis 4
 ``` r
 # Load necessary libraries
 library(ggplot2)
@@ -197,7 +201,7 @@ ggplot(weekly_avg_sales, aes(x = Week, y = avg_weekly_sales)) +
     )
 ```
 
-![](RMARKDOWN-LATEST_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+![](RMARKDOWN-LATEST_files/figure-gfm/plot4.png)<!-- -->
 
 ## Conclusion
 
@@ -211,6 +215,7 @@ ggplot(weekly_avg_sales, aes(x = Week, y = avg_weekly_sales)) +
 - Apart from the occasional peaks and dips, weekly average sales remain
   relatively stable around the mean which is the red dashed line.
 
+## Analysis 5
 ``` r
 # Load necessary libraries
 library(ggplot2)
@@ -238,7 +243,7 @@ plots <- lapply(columns, function(col) {
 grid.arrange(grobs = plots, ncol = 2)
 ```
 
-![](RMARKDOWN-LATEST_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](RMARKDOWN-LATEST_files/figure-gfm/plot5.png)<!-- -->
 
 ## Conclusion
 
