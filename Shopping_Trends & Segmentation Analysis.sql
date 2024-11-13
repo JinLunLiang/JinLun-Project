@@ -1,3 +1,4 @@
+--Data Cleaning
 --Check data type
 SELECT column_name, data_type
 FROM information_schema.columns
@@ -49,7 +50,56 @@ FROM shopping_trends
 GROUP BY customer_id, age, gender, item_purchased, category, purchase_amount_usd, location, size, color, season, review_rating, subscription_status, payment_method, shipping_type, discount_applied, promo_code_used, previous_purchases, preferred_payment_method, frequency_of_purchases
 HAVING COUNT(*) > 1;
 
---Demographic Segmentation Analysis (Analyze by age group and gender to identify purchasing patterns)
+--Shopping Trends Analysis (Refer Tableau For Visualization : https://public.tableau.com/views/ShoppingTrendsAnalysis_17314747229240/Dashboard2?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+-- 1) Top 3 Products per Category by Sales
+WITH category_sales AS (
+    SELECT 
+        category,
+        item_purchased,
+        SUM(purchase_amount_usd) AS total_sales,
+        RANK() OVER (PARTITION BY category ORDER BY SUM(purchase_amount_usd) DESC) AS sales_rank
+    FROM 
+        shopping_trends
+    GROUP BY 
+        category, item_purchased
+)
+SELECT 
+    category,
+    item_purchased,
+    total_sales,
+    sales_rank
+FROM 
+    category_sales
+WHERE 
+    sales_rank <= 3
+ORDER BY 
+    category, total_sales DESC;
+
+-- 2) Retention and Churn Rate by Subscription Status
+SELECT 
+    subscription_status,
+    COUNT(customer_id) AS Total_Customers,
+    COUNT(CASE WHEN frequency_of_purchases IN ('Bi-Weekly', 'Weekly', 'Fortnightly') THEN customer_id END) * 1.0 / COUNT(customer_id) AS Retention_Rate,
+    COUNT(CASE WHEN frequency_of_purchases IN ('Monthly', 'Annually', 'Quarterly', 'Every 3 Months') THEN customer_id END) * 1.0 / COUNT(customer_id) AS Churn_Rate
+FROM 
+    shopping_trends
+GROUP BY 
+    subscription_status;
+
+-- 3) Average Order Value and Purchase Frequency by Payment Method
+SELECT 
+    payment_method,
+    COUNT(customer_id) AS purchase_frequency,
+    AVG(purchase_amount_usd) AS Avg_Order_Value
+FROM 
+    shopping_trends
+GROUP BY 
+    payment_method
+ORDER BY 
+    Avg_Order_Value DESC;
+
+--Market Segmentation Analysis (Refer Tableau For Visualization : https://public.tableau.com/views/MarketSegmentationAnalysis_17314746907080/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+-- 1) Demographic Segmentation Analysis (Analyze by age group and gender to identify purchasing patterns)
 SELECT 
     CASE 
         WHEN age < 18 THEN '<18'
@@ -78,7 +128,7 @@ GROUP BY
 ORDER BY 
     age_group, gender;
 
---Geographic Segmentation Analysis (Segment customers by location to understand regional differences in purchasing behavior)
+-- 2) Geographic Segmentation Analysis (Segment customers by location to understand regional differences in purchasing behavior)
 SELECT 
     location,
     COUNT(customer_id) AS total_customers,
@@ -92,7 +142,7 @@ GROUP BY
 ORDER BY 
     avg_purchase_amount DESC;
 
---Behavioral Segmentation Analysis (Analyze customer behavior based on frequency of purchases and spending habits)
+-- 3) Behavioral Segmentation Analysis (Analyze customer behavior based on frequency of purchases and spending habits)
 SELECT 
     frequency_of_purchases,
     COUNT(customer_id) AS customer_count,
@@ -106,7 +156,7 @@ GROUP BY
 ORDER BY 
     avg_purchase_amount DESC;
 
---Psychographic Segmentation Analysis (Analyze customer preferences based on product characteristics like category, season, and color)
+-- 4) Psychographic Segmentation Analysis (Analyze customer preferences based on product characteristics like category, season, and color)
 SELECT 
     category,
     season,
@@ -120,50 +170,3 @@ GROUP BY
     category, season, color
 ORDER BY 
     avg_purchase_amount DESC;
-
--- Top 3 Products per Category by Sales
-WITH category_sales AS (
-    SELECT 
-        category,
-        item_purchased,
-        SUM(purchase_amount_usd) AS total_sales,
-        RANK() OVER (PARTITION BY category ORDER BY SUM(purchase_amount_usd) DESC) AS sales_rank
-    FROM 
-        shopping_trends
-    GROUP BY 
-        category, item_purchased
-)
-SELECT 
-    category,
-    item_purchased,
-    total_sales,
-    sales_rank
-FROM 
-    category_sales
-WHERE 
-    sales_rank <= 3
-ORDER BY 
-    category, total_sales DESC;
-
--- Retention and Churn Rate by Subscription Status
-SELECT 
-    subscription_status,
-    COUNT(customer_id) AS Total_Customers,
-    COUNT(CASE WHEN frequency_of_purchases IN ('Bi-Weekly', 'Weekly', 'Fortnightly') THEN customer_id END) * 1.0 / COUNT(customer_id) AS Retention_Rate,
-    COUNT(CASE WHEN frequency_of_purchases IN ('Monthly', 'Annually', 'Quarterly', 'Every 3 Months') THEN customer_id END) * 1.0 / COUNT(customer_id) AS Churn_Rate
-FROM 
-    shopping_trends
-GROUP BY 
-    subscription_status;
-
--- Average Order Value and Purchase Frequency by Payment Method
-SELECT 
-    payment_method,
-    COUNT(customer_id) AS purchase_frequency,
-    AVG(purchase_amount_usd) AS Avg_Order_Value
-FROM 
-    shopping_trends
-GROUP BY 
-    payment_method
-ORDER BY 
-    Avg_Order_Value DESC;
