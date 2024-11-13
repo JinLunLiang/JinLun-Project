@@ -50,7 +50,7 @@ FROM shopping_trends
 GROUP BY customer_id, age, gender, item_purchased, category, purchase_amount_usd, location, size, color, season, review_rating, subscription_status, payment_method, shipping_type, discount_applied, promo_code_used, previous_purchases, preferred_payment_method, frequency_of_purchases
 HAVING COUNT(*) > 1;
 
---Shopping Trends Analysis (Refer Tableau For Visualization : https://public.tableau.com/views/ShoppingTrendsAnalysis_17314747229240/Dashboard2?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+--Shopping Trends Analysis (Refer Tableau For Visualization : https://public.tableau.com/views/ShoppingTrendsAnalysis_17314747229240/Dashboard2?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link )
 -- 1) Top 3 Products per Category by Sales
 WITH category_sales AS (
     SELECT 
@@ -98,7 +98,7 @@ GROUP BY
 ORDER BY 
     Avg_Order_Value DESC;
 
---Market Segmentation Analysis (Refer Tableau For Visualization : https://public.tableau.com/views/MarketSegmentationAnalysis_17314746907080/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+--Market Segmentation Analysis (Refer Tableau For Visualization : https://public.tableau.com/shared/DKQXNG4PD?:display_count=n&:origin=viz_share_link )
 -- 1) Demographic Segmentation Analysis (Analyze by age group and gender to identify purchasing patterns)
 SELECT 
     CASE 
