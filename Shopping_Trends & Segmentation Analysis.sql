@@ -89,7 +89,8 @@ FROM
 GROUP BY 
     subscription_status;
 
---Conclusion : 1) Subscribers have a marginally better retention rate than non-subscribers (42.74% vs. 41.38%), though the difference is minimal. This indicates that while subscription may encourage a small increase in loyalty, it is not a strong driver of retention.
+--Conclusion : 
+--1) Subscribers have a marginally better retention rate than non-subscribers (42.74% vs. 41.38%), though the difference is minimal. This indicates that while subscription may encourage a small increase in loyalty, it is not a strong driver of retention.
 --2) Both groups show high churn rates (57-59%), indicating that a large percentage of customers—subscribed or not—are not staying engaged long-term.
 
 -- 3) Average Order Value and Purchase Frequency by Payment Method
@@ -168,7 +169,8 @@ GROUP BY
 ORDER BY 
     avg_purchase_amount DESC;
 
---Conclusion : 1) Quarterly and Bi-Weekly customers represent the most valuable segments, with high total spending and customer counts, making them ideal for targeted campaigns and loyalty programs.
+--Conclusion : 
+-- 1) Quarterly and Bi-Weekly customers represent the most valuable segments, with high total spending and customer counts, making them ideal for targeted campaigns and loyalty programs.
 -- 2) The Montly, Annual and Weekly segments are smaller and spend less overall, but tailored strategies like high-value annual offers or weekly discounts could increase their spending and engagement.
 
 -- 4) Psychographic Segmentation Analysis (Analyze customer preferences based on product characteristics like category, season, and color)
