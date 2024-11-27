@@ -1,8 +1,8 @@
  # Liang Jin Lun - Data Analyst Portfolio
 ## About
-Hi, I'm Liang Jin Lun! As a dedicated and adaptable person who transitioning into the field of data analytics, I bring a unique perspective rooted in my diverse background and commitment to data-driven decision-making. With foundation in business, I am now focusing on the art and science of data analysis to uncover insights that drive impact. My portfolio demonstrates my proficiency in SQL, Python, and Tableau, showcasing my ability to transform complex datasets into actionable information and visualization.
+Hi, I'm Liang Jin Lun! As a dedicated and adaptable person who is transitioning into the field of data analytics, I bring a unique perspective rooted in my diverse background and commitment to data-driven decision-making. With a foundation in business, I am now focusing on the art and science of data analysis to uncover insights that drive impact. My portfolio demonstrates my proficiency in SQL, Python, and Tableau, showcasing my ability to transform complex datasets into actionable information and visualization.
 
-In my projects, you will find dataset analysis that reflect and uncover current industry challenges. Each project is designed to highlight key competencies such as dynamic SQL querying, use of python, and dynamic data visualization, to extract trends and patterns. Whether analyzing shopping trends or Walmart sales, my work exemplifies my dedication to uncovering meaningful insights and my passion for data analytics.
+In my projects, you will find dataset analysis that reflects and uncovers current industry challenges. Each project is designed to highlight key competencies such as dynamic SQL querying, Python, Tableau, and data visualization to extract trends and patterns. Whether analyzing shopping trends or Walmart sales, my work exemplifies my dedication to uncovering meaningful insights and my passion for data analytics.
 
 I am excited to contribute to innovative teams and continue building my expertise in data analytics, ready to apply my skills in translating data into strategic solutions.
 
@@ -60,5 +60,5 @@ Here's a list of my certificates with Data Analyst, with the date of completion 
 - [Data Analyst]() (Nov 2024) (DataCamp)
 
 ## Contacts
-- LinkedIn: [JinLun Liang](https://www.linkedin.com/in/jinlun-liang-039674319/)
+- LinkedIn: [JinLun Liang](https://www.linkedin.com/in/jinlunliang/)
 - Email: jinlun-01@hotmail.com
