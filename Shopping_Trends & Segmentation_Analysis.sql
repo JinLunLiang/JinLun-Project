@@ -51,7 +51,7 @@ GROUP BY customer_id, age, gender, item_purchased, category, purchase_amount_usd
 HAVING COUNT(*) > 1;
 
 
---Shopping Trends Analysis (Refer Tableau For Visualization : https://public.tableau.com/views/ShoppingTrendsAnalysis_17314747229240/Dashboard2?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link )
+--Shopping Trends Analysis (Refer Tableau For Visualization : https://public.tableau.com/views/ShoppingTrendsAnalysis_17314747229240/Dashboard2?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 -- 1) Top 3 Products per Category by Sales
 WITH category_sales AS (
     SELECT 
