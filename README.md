@@ -6,7 +6,7 @@ In my projects, you will find dataset analysis that reflects and uncovers curren
 
 I am excited to contribute to innovative teams and continue building my expertise in data analytics, ready to apply my skills in translating data into strategic solutions.
 
-My CV in [pdf]().
+My CV in [pdf](https://github.com/JinLunLiang/JinLun-Project/blob/main/Liang%20Jin%20Lun_DataAnalyst_Resume.pdf).
 
 This is a repository to showcase skills, portfolio and track my progress in Data Analytics related topics.
 
@@ -57,7 +57,7 @@ Bachelor's degree of Business Administration (Honours)
 ## Certificates
 Here's a list of my certificates with Data Analyst, with the date of completion in brackets :
 - [Google Data Analytics Professional Certificate](https://www.coursera.org/account/accomplishments/professional-cert/0Q1H2TR3ZN18) (Nov 2024) (Coursera - Google)
-- [Data Analyst]() (Nov 2024) (DataCamp)
+- Data Analyst (Nov 2024) (DataCamp)
 
 ## Contacts
 - LinkedIn: [JinLun Liang](https://www.linkedin.com/in/jinlunliang/)
