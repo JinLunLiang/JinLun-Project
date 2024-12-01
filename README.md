@@ -57,8 +57,9 @@ Bachelor's degree of Business Administration (Honours)
 ## Certificates
 Here's a list of my certificates with Data Analyst, with the date of completion in brackets :
 - [Google Data Analytics Professional Certificate](https://www.coursera.org/account/accomplishments/professional-cert/0Q1H2TR3ZN18) (Nov 2024) (Coursera - Google)
-- [Data Analyst](https://www.datacamp.com/certificate/DAA0017741721227) (Nov 2024) (DataCamp)
+- [Professional Data Analyst Certificate](https://www.datacamp.com/certificate/DA0025143361125) (Nov 2024) (DataCamp)
 
 ## Contacts
 - LinkedIn: [JinLun Liang](https://www.linkedin.com/in/jinlunliang/)
 - Email: jinlun-01@hotmail.com
+- Phone Number : +6012-4111033
