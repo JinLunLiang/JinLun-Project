@@ -6,7 +6,7 @@ In my projects, you will find dataset analysis that reflects and uncovers curren
 
 I am excited to contribute to innovative teams and continue building my expertise in data analytics, ready to apply my skills in translating data into strategic solutions.
 
-My CV in [pdf](https://github.com/JinLunLiang/JinLun-Project/blob/main/Liang%20Jin%20Lun_DataAnalyst_Resume.pdf).
+My CV in [pdf](https://github.com/JinLunLiang/JinLun-Project/blob/main/Liang%20Jin%20Lun_Resume.pdf).
 
 This is a repository to showcase skills, portfolio and track my progress in Data Analytics related topics.
 
