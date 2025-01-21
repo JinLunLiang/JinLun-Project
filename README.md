@@ -1,6 +1,6 @@
  # Liang Jin Lun - Data Analyst Portfolio
 ## About
-Hi, I'm Liang Jin Lun! As a dedicated and adaptable person who is transitioning into the field of data analytics, I bring a unique perspective rooted in my diverse background and commitment to data-driven decision-making. With a foundation in business, I am now focusing on the art and science of data analysis to uncover insights that drive impact. My portfolio demonstrates my proficiency in SQL, Python, and Tableau, showcasing my ability to transform complex datasets into actionable information and visualization.
+Hi, I'm Liang Jin Lun! As a dedicated and adaptable person who had planning and supply chain experience in manufacturing industry. Now, I have delved into analytics and gained knowledge on SQL, Tableau & Python. I could bring a unique perspective rooted in my diverse background and commitment to data-driven decision-making. My portfolio demonstrates my proficiency in SQL, Python, and Tableau, showcasing my ability to transform complex datasets into actionable information and visualization.
 
 In my projects, you will find dataset analysis that reflects and uncovers current industry challenges. Each project is designed to highlight key competencies such as dynamic SQL querying, Python, Tableau, and data visualization to extract trends and patterns. Whether analyzing shopping trends or Walmart sales, my work exemplifies my dedication to uncovering meaningful insights and my passion for data analytics.
 
