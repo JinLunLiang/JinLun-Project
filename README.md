@@ -1,10 +1,8 @@
- # Liang Jin Lun - Data Analyst Portfolio
+ # Liang Jin Lun - Portfolio
 ## About
-Hi, I'm Liang Jin Lun! As a dedicated and adaptable person who had planning and supply chain experience in manufacturing industry. Now, I have delved into analytics and gained knowledge on SQL, Tableau & Python. I could bring a unique perspective rooted in my diverse background and commitment to data-driven decision-making. My portfolio demonstrates my proficiency in SQL, Python, and Tableau, showcasing my ability to transform complex datasets into actionable information and visualization.
+Hi, I'm Liang Jin Lun! As a dedicated and adaptable person who had planning and supply chain experience in manufacturing industry. I have delved into analytics and gained knowledge on SQL, Tableau & Python and could bring a unique perspective rooted in my diverse background and commitment to data-driven decision-making. My portfolio demonstrates my proficiency in SQL, Python, and Tableau, showcasing my ability to transform complex datasets into actionable information and visualization.
 
-In my projects, you will find dataset analysis that reflects and uncovers current industry challenges. Each project is designed to highlight key competencies such as dynamic SQL querying, Python, Tableau, and data visualization to extract trends and patterns. Whether analyzing shopping trends or Walmart sales, my work exemplifies my dedication to uncovering meaningful insights and my passion for data analytics.
-
-I am excited to contribute to innovative teams and continue building my expertise in data analytics, ready to apply my skills in translating data into strategic solutions.
+In my projects, you will find dataset analysis that reflects and uncovers current industry challenges. Each project is designed to highlight key competencies such as dynamic SQL querying, Python, Tableau, and data visualization to extract trends and patterns. Whether analyzing shopping trends or Walmart sales, my work exemplifies my dedication to uncovering meaningful insights.
 
 My CV in [pdf](https://github.com/JinLunLiang/JinLun-Project/blob/main/Liang%20Jin%20Lun_Resume.pdf).
 
